@@ -1,0 +1,150 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Global text style */
+body {
+    font-family: Arial, sans-serif;
+    color: #7F8C8D;
+    line-height: 1.7;
+}
+
+p {
+    margin-top: 5px;
+}
+
+h1, h2, h3, h4, h5, label {
+    color: #45474F;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h3, h4, strong {
+    font-weight: 600;
+}
+
+/* Columns, conteiner, sections */
+
+.col-one-third, .col-half {
+    width: 100%;
+    float: none;
+}
+
+@media screen and (min-width: 960px) {
+    .col-one-third {
+        width: 33.3333%;
+        float: left;
+    }
+
+    .col-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+section {
+    clear: both;
+    padding: 40px 0;
+    overflow: auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.center-text {
+    text-align: center;
+}
+/* Header styles */
+
+.header {
+    background: #38374a;
+    color: #FFF;
+    height: 60px;
+}
+
+.logo {
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.menu {
+    float: right;
+}
+
+.menu li {
+    float: left;
+    line-height: 60px;
+    padding: 0 10px;
+}
+
+/* About me */
+.about-me {
+    padding: 200px 0;
+    background: url(3.jpg) -1200px -1100px;
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    color: antiquewhite;
+    padding: 16px;
+}
