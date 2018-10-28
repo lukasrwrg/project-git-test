@@ -29,7 +29,7 @@ pipeline {
                                         sourceFiles: 'arch/TestApp.zip',
                                         removePrefix: 'arch/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo rm -rf /usr/share/nginx/html/* && unzip /tmp/TestApp.zip -d /usr/share/nginx/html'
+                                        execCommand: 'rm -rf /usr/share/nginx/html/* && unzip /tmp/TestApp.zip -d /usr/share/nginx/html'
                                     )
                                 ]
                             )
