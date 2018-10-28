@@ -26,8 +26,7 @@ pipeline {
                                 ], 
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'arch/TestApp.zip',
-                                        removePrefix: 'arch/',
+                                        sourceFiles: 'TestApp.zip',
                                         remoteDirectory: '/tmp',
                                         execCommand: 'rm -rf /usr/share/nginx/html/* && unzip /tmp/TestApp.zip -d /usr/share/nginx/html'
                                     )
