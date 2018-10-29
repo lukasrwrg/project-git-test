@@ -40,7 +40,7 @@ pipeline {
         }       
         stage('TestExecution') {
             steps {
-                build(job: 'robot /home/lukasz3/Robot/TestSuite.robot', propagate: false)
+                build(job: 'robot', propagate: false)
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
