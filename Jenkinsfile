@@ -41,6 +41,7 @@ pipeline {
         stage('TestExecution') {
             steps {
                 echo 'Running build automation'
+                robot '/home/lukasz3/Robot/TestSuite.robot'
             }
         }
         stage('DeployToProduction') {
