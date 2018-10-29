@@ -53,10 +53,11 @@ pipeline {
                     otherFiles : ""
                 ])
             }
-                        catch (e) {
-            throw(e)
+        }
+                catch (e) {
+                throw(e)
             } finally {
-            }
+        }
         }
         stage('DeployToProduction') {
             when {
