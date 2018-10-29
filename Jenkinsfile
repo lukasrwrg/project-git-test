@@ -39,15 +39,9 @@ pipeline {
             }
         }
         stage('TestExecution') {
-            steps([
-            $class : 'TestSuite.robot',
-            outputPath : '/home/lukasz3/Robot/',
-            outputFileName : "*.xml",
-            disableArchiveOutput : false,
-            passThreshold : 100,
-            unstableThreshold: 70.0,
-            otherFiles : ""
-          ])
+            steps {
+                echo 'Running build automation'
+            }
         }
         stage('DeployToProduction') {
             when {
