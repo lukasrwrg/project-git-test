@@ -46,7 +46,7 @@ pipeline {
                     outputPath : '/home/lukasz3/Robot/',
                     outputFileName : "*.xml",
                     disableArchiveOutput : false,
-                    passThreshold : 0,
+                    passThreshold : 50,
                     unstableThreshold : 0,
                     otherFiles : ""
                 ])
