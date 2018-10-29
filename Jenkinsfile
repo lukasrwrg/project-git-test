@@ -39,14 +39,14 @@ pipeline {
             }
         }
         stage('TestExecution') {
-            steps([
+            step([
             $class : 'TestSuite.robot',
             outputPath : '/home/lukasz3/Robot/',
             outputFileName : "*.xml",
             disableArchiveOutput : false,
             passThreshold : 100,
             unstableThreshold: 70.0,
-            otherFiles : "*.png",
+            otherFiles : ""
           ])
         }
         stage('DeployToProduction') {
