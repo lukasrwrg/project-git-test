@@ -1,5 +1,4 @@
 pipeline {
-    def build_ok = true
     agent any
     stages {
         stage('Build') {
@@ -38,11 +37,14 @@ pipeline {
                     )
                 }
             }
-        }
-        try{        
+        }       
         stage('TestExecution') {
             steps {
+                try {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
+                } catch(err) {
+                    echo "something failed"
+                }
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
@@ -55,10 +57,6 @@ pipeline {
                 ])
                
             }   
-        }
-        } catch(e) {
-        build_ok = false
-        echo e.toString()  
         }
         stage('DeployToProduction') {
             when {
