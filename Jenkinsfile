@@ -40,9 +40,7 @@ pipeline {
         }
         stage('TestExecution') {
             steps {
-                sh 'robot /home/lukasz3/Robot/TestSuite.robot'
-                input 'Does the Test environment look OK?'
-                milestone(1)
+                sh 'robot /home/lukasz3/Robot/TestSuite.robot', propagate: false
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
