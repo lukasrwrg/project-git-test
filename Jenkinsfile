@@ -38,6 +38,7 @@ pipeline {
                 }
             }
         }
+        try {
         stage('TestExecution') {
             steps {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
@@ -51,6 +52,10 @@ pipeline {
                     unstableThreshold : 50,
                     otherFiles : ""
                 ])
+            }
+                        catch (e) {
+            throw(e)
+            } finally {
             }
         }
         stage('DeployToProduction') {
