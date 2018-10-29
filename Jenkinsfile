@@ -40,9 +40,7 @@ pipeline {
         }       
         stage('TestExecution') {
             steps {
-                always {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
-                }
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
