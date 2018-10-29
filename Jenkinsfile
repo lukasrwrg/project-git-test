@@ -41,6 +41,8 @@ pipeline {
         stage('TestExecution') {
             steps {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
+                input 'Does the Test environment look OK?'
+                milestone(1)
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
@@ -51,7 +53,7 @@ pipeline {
                     unstableThreshold : 50,
                     otherFiles : ""
                 ])
-                input 'Does the Test environment look OK?'
+               
             }   
         }
         stage('DeployToProduction') {
