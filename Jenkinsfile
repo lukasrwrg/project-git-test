@@ -1,4 +1,5 @@
 pipeline {
+    def build_ok = true
     agent any
     stages {
         stage('Build') {
@@ -38,7 +39,6 @@ pipeline {
                 }
             }
         }
-        def build_ok = true
         try{        
         stage('TestExecution') {
             steps {
