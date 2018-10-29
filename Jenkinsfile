@@ -47,7 +47,7 @@ pipeline {
                     outputFileName : "*.xml",
                     disableArchiveOutput : false,
                     passThreshold : 100,
-                    unstableThreshold: 70,
+                    unstableThreshold : 20,
                     otherFiles : ""
                 ])
             }
