@@ -39,12 +39,8 @@ pipeline {
             }
         }       
         stage('TestExecution') {
-            steps {
-                try {
+            always {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
-                } catch(err) {
-                    echo "something failed"
-                }
                 step([
                     $class : 'RobotPublisher',
                     outputPath : '/home/lukasz3/Robot/',
