@@ -38,6 +38,11 @@ pipeline {
                 }
             }
         }
+        stage('TestExecution') {
+            steps {
+                robot /home/lukasz3/Robot/TestSuite.robot
+            }
+        }
         stage('DeployToProduction') {
             when {
                 branch 'master'
