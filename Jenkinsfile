@@ -39,7 +39,6 @@ pipeline {
             }
         }
         stage('TestExecution') {
-            try {
             steps {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
                 step([
@@ -52,13 +51,8 @@ pipeline {
                     unstableThreshold : 50,
                     otherFiles : ""
                 ])
-            }
-            }
-            catch (exc) {
-            echo 'Something failed, I should sound the klaxons!'
-            throw (exc)
-        }
-            finally {}
+                input 'Does the Test environment look OK?'
+            }   
         }
         stage('DeployToProduction') {
             when {
