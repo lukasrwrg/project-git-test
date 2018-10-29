@@ -39,7 +39,7 @@ pipeline {
             }
         }
         stage('TestExecution') {
-            step([
+            steps([
             $class : 'TestSuite.robot',
             outputPath : '/home/lukasz3/Robot/',
             outputFileName : "*.xml",
