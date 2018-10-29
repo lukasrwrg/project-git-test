@@ -58,6 +58,7 @@ pipeline {
             echo 'Something failed, I should sound the klaxons!'
             throw (exc)
         }
+            finally {}
         }
         stage('DeployToProduction') {
             when {
