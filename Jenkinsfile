@@ -38,8 +38,8 @@ pipeline {
                 }
             }
         }
-        try {
         stage('TestExecution') {
+            try {
             steps {
                 sh 'robot /home/lukasz3/Robot/TestSuite.robot'
                 step([
@@ -53,10 +53,10 @@ pipeline {
                     otherFiles : ""
                 ])
             }
-        }
-                catch (e) {
-                throw(e)
-            } finally {
+            }
+            catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
         }
         }
         stage('DeployToProduction') {
